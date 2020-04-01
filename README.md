@@ -1,2 +1,0 @@
-# vscode_cpp_cmake_example
-vscode_cpp_cmake_example
