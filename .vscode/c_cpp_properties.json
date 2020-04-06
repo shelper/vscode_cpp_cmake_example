@@ -1,10 +1,11 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Win32-MSVC",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${vcpkgRoot}/**"
+                "${vcpkgRoot}/installed/x64-windows/include/**",
+                "${vcpkgRoot}/installed/x86-windows/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,7 +13,26 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.18362.0",
-            "compilerPath": "${env:VCBuildToolPath}/bin/Hostx64/x64/cl.exe"
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Win32-clang",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${vcpkgRoot}/installed/x64-windows/include/**",
+                "${vcpkgRoot}/installed/x86-windows/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "C:/Program Files/LLVM/bin/clang.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 4

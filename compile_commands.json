@@ -1,0 +1,19 @@
+[
+{
+  "directory": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/build",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang-cl.exe  /nologo -TP  -IC:\\Users\\MPNV38\\Develop\\github\\vcpkg\\installed\\x64-windows\\include  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   /FoCMakeFiles\\main.dir\\main.cpp.obj /FdTARGET_COMPILE_PDB -c C:\\Users\\MPNV38\\Develop\\github\\vscode_cpp_cmake_example\\main.cpp",
+  "file": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/main.cpp"
+},
+
+{
+  "directory": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/build",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang-cl.exe  /nologo -TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   /FoCMakeFiles\\ExampleFunc.dir\\ExampleFunc.cpp.obj /FdTARGET_COMPILE_PDB -c C:\\Users\\MPNV38\\Develop\\github\\vscode_cpp_cmake_example\\ExampleFunc.cpp",
+  "file": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/ExampleFunc.cpp"
+},
+
+{
+  "directory": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/build",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\clang-cl.exe  /nologo -TP  -IC:\\Users\\MPNV38\\Develop\\github\\vcpkg\\installed\\x64-windows\\include  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   /Fotest\\CMakeFiles\\ExampleFunc_test.dir\\ExampleFunc_test.cpp.obj /FdTARGET_COMPILE_PDB -c C:\\Users\\MPNV38\\Develop\\github\\vscode_cpp_cmake_example\\test\\ExampleFunc_test.cpp",
+  "file": "C:/Users/MPNV38/Develop/github/vscode_cpp_cmake_example/test/ExampleFunc_test.cpp"
+}
+]

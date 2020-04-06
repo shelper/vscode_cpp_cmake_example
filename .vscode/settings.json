@@ -27,8 +27,6 @@
         "iostream": "cpp",
         "string": "cpp"
     },
-    "gtest-adapter.debugConfig": [
-        "debug_test"
-    ],
-    "gtest-adapter.supportLocation": true
+    "gtest-adapter.debugConfig": "debug_test",
+    "gtest-adapter.supportLocation": true,
 }
