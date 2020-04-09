@@ -23,9 +23,8 @@ int main()
     {
         cout << word << " ";
     }
-    cout << endl;
 
-    cv::Mat img = cv::imread("C:\\Users\\MPNV38\\Develop\\github\\vcpkg\\buildtrees\\opencv4\\src\\4.1.1-fb9e10326a\\samples\\data\\lena.jpg");
+    cv::Mat img = cv::imread("./res/lena.jpg");
     cv::imshow("lena image", img);
     cv::waitKey(0);
     cv::destroyWindow("lena image");

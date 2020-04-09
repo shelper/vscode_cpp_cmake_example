@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Example VERSION 0.1.0)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 include(CTest)
 include(GoogleTest)
 enable_testing()
@@ -14,6 +18,6 @@ target_link_libraries(main ${OpenCV_LIBRARIES})
 
 add_library(ExampleFunc ExampleFunc.cpp)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+# set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+# set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+# include(CPack)
