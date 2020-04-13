@@ -6,7 +6,7 @@ add_executable(ExampleFunc_test ExampleFunc_test.cpp)
 #     add
 # )
 find_package(GTest REQUIRED)
-target_compile_features( ExampleFunc_test PUBLIC cxx_std_17)
+target_compile_features(ExampleFunc_test PUBLIC cxx_std_17)
 target_include_directories(ExampleFunc_test PRIVATE ${GTEST_INCLUDE_DIRS})
 target_link_libraries(ExampleFunc_test ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES} ExampleFunc)
 
