@@ -13,6 +13,8 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 
+#include <filesystem>
+
 using namespace std;
 
 int main()
@@ -23,6 +25,8 @@ int main()
     {
         cout << word << " ";
     }
+
+    cout << "Current working directory: " << filesystem::current_path() << endl;
 
     cv::Mat img = cv::imread("./res/lena.jpg");
     cv::imshow("lena image", img);
