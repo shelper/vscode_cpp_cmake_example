@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Win32-MSVC",
+            "name": "Win-MSVC",
             "includePath": [
                 "${workspaceFolder}/**",
                 "${vcpkgRoot}/installed/x64-windows/include/**",
@@ -18,7 +18,7 @@
             "cppStandard": "c++17"
         },
         {
-            "name": "Win32-clang",
+            "name": "Win-clang",
             "includePath": [
                 "${workspaceFolder}/**",
                 "${vcpkgRoot}/installed/x64-windows/include/**",
@@ -31,6 +31,38 @@
             ],
             "windowsSdkVersion": "10.0.18362.0",
             "compilerPath": "C:/Program Files/LLVM/bin/clang.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux-clang",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${vcpkgRoot}/installed/x64-linux/include/**",
+                "${vcpkgRoot}/installed/x86-linux/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux-gcc",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${vcpkgRoot}/installed/x64-linux/include/**",
+                "${vcpkgRoot}/installed/x86-linux/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17"
         }
