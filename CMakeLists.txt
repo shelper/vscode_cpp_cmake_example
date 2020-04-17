@@ -15,8 +15,9 @@ add_library(ExampleFunc ExampleFunc.cpp)
 add_executable(main main.cpp)
 add_subdirectory(test)
 
-find_package(OpenCV REQUIRED) 
 target_compile_features(main PUBLIC cxx_std_17)
+
+find_package(OpenCV CONFIG REQUIRED) 
 target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(main ${OpenCV_LIBRARIES})
 
