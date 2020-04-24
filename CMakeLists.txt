@@ -11,15 +11,27 @@ project(Example VERSION 0.1.0)
 # include(GoogleTest)
 # enable_testing()
 
-add_library(ExampleFunc ExampleFunc.cpp)
-add_executable(main main.cpp)
-add_subdirectory(test)
+## setup conan libraries
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 
+## add target after setting up conan
+add_library(ExampleFunc ExampleFunc.cpp)
+add_executable(main main.cpp) # put this after conan_basic_setup().
+set_target_properties( main ExampleFunc
+    PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+## set the linkage using conan
+target_link_libraries(main PRIVATE ${CONAN_LIBS})
+## enable c++17
 target_compile_features(main PUBLIC cxx_std_17)
 
-find_package(OpenCV CONFIG REQUIRED) 
-target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
-target_link_libraries(main ${OpenCV_LIBRARIES})
+## add additional folder that contains CMakeLists.txt
+add_subdirectory(test)
 
 ## for packing the binary/source for installation
 # set(CPACK_PROJECT_NAME ${PROJECT_NAME})
