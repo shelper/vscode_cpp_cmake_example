@@ -1,4 +1,4 @@
-This template has two branches: conan and vcpkg, each should work with its pkg management software.
+This template has two branches: `master`(also aliased to `conan`) and vcpkg, each should work with its pkg management software.
 
 For vcpkg, you need to add the following settings to your cmake configuration in your .vscode/settings.json
 ```
