@@ -3,9 +3,7 @@
         {
             "name": "Win-MSVC",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${vcpkgRoot}/installed/x64-windows/include/**",
-                "${vcpkgRoot}/installed/x86-windows/include/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -20,9 +18,7 @@
         {
             "name": "Win-clang",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${vcpkgRoot}/installed/x64-windows/include/**",
-                "${vcpkgRoot}/installed/x86-windows/include/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -37,9 +33,7 @@
         {
             "name": "Linux-clang",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${vcpkgRoot}/installed/x64-linux/include/**",
-                "${vcpkgRoot}/installed/x86-linux/include/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -53,9 +47,7 @@
         {
             "name": "Linux-gcc",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${vcpkgRoot}/installed/x64-linux/include/**",
-                "${vcpkgRoot}/installed/x86-linux/include/**"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -64,7 +56,8 @@
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++17",
+            "configurationProvider": "vector-of-bool.cmake-tools"
         }
     ],
     "version": 4
