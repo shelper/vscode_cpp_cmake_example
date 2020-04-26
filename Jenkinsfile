@@ -5,22 +5,25 @@
 // def repo_branch = 'master'
 
 pipeline {
-    stage("Get dependencies through conan"){
-        sh "mkdir -p build"
-        dir ('build') {
-          sh "conan install .. -b missing"
-        }
-    }
+  agent any
+  stages {
+      stage("Get dependencies through conan"){
+          sh "mkdir -p build"
+          dir ('build') {
+            sh "conan install .. -b missing"
+          }
+      }
 
-    stage("Build project"){
-        dir ('build') {
-          sh "cmake ../ && cmake --build ."
-        }
-    }
+      stage("Build project"){
+          dir ('build') {
+            sh "cmake ../ && cmake --build ."
+          }
+      }
 
-    // stage("Testing"){
-    //     dir ('.'){
-    //         sh "CTest"
-    //     }
-    // }
+      // stage("Testing"){
+      //     dir ('.'){
+      //         sh "CTest"
+      //     }
+      // }
+  }
 }
