@@ -5,13 +5,10 @@
 // def repo_branch = 'master'
 
 pipeline {
-    def conan_client = Artifactory.newConanClient()
-
     stage("Get dependencies through conan"){
         sh "mkdir -p build"
         dir ('build') {
-          def conan_setup_info = conan_client.run(command: "install .. -b missing")
-          server.publishBuildInfo conan_setup_info
+          sh "conan install .. -b missing"
         }
     }
 
