@@ -7,7 +7,7 @@
 pipeline {
   agent any
   stages {
-      stage("Get dependencies through conan"){
+      stage("conan install"){
         steps {
           sh "mkdir -p build"
           dir ('build') {
@@ -15,14 +15,20 @@ pipeline {
           }
         }
       }
-      stage("Build project"){
+      stage("cmake config"){
         steps {
           dir ('build') {
-            sh "cmake ../ && cmake --build ."
+            sh "cmake .."
           }
         }
       }
-
+      stage("building...") {
+        steps {
+          dir ('build') {
+            sh "cmake --build ."
+          }
+        }
+      }
       // stage("Testing"){
       //     dir ('.'){
       //         sh "CTest"
