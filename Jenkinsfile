@@ -11,7 +11,7 @@ pipeline {
         steps {
           sh "mkdir -p build"
           dir ('build') {
-            sh "conan install .. -b missing"
+            sh "conan install .. -b"
           }
         }
       }
