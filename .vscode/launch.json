@@ -5,11 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) debug_wsl_main",
-            "preLaunchTask": "set_wsl_display",
+            "name": "(msvc) debug_test",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/Debug/ExampleFunc_test.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+        },
+        {
+            "name": "(lldb) debug_test", // lldb only works for MacOS at this moment
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/main",
+            "program": "${workspaceFolder}/build/bin/ExampleFunc_test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "(gdb) debug_test", // only for linux or Cygwin/MinGW for windows
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/ExampleFunc_test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -25,10 +47,10 @@
             ]
         },
         {
-            "name": "debug_test",
+            "name": "(msvc) debug_main",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/ExampleFunc_test",
+            "program": "${workspaceFolder}/build/bin/Debug/main.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -36,15 +58,24 @@
             "externalConsole": false
         },
         {
-            "name": "debug_main",
-            "type": "cppvsdbg",
+            "name": "(gdb) debug_wsl_main",
+            "preLaunchTask": "set_wsl_display",
+            "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/main.exe",
+            "program": "${workspaceFolder}/build/bin/main",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }

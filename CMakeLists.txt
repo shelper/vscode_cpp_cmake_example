@@ -7,9 +7,9 @@ project(Example VERSION 0.1.0)
 # set(CMAKE_CXX_EXTENSIONS OFF)
 
 ## include the following if you want to use ctest to find & run all the test
-# include(CTest)
 # include(GoogleTest)
-# enable_testing()
+include(CTest)
+enable_testing()
 
 ## setup conan libraries
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)

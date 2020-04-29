@@ -27,6 +27,5 @@
         "iostream": "cpp",
         "string": "cpp"
     },
-    "gtest-adapter.debugConfig": "debug_test",
-    "gtest-adapter.supportLocation": true
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
 }
