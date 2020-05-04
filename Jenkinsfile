@@ -11,8 +11,7 @@ pipeline {
         steps {
           sh "mkdir -p build"
           dir ('build') {
-            sh "conan profile update settings.compiler.libcxx=libstdc++11 default"
-            sh "conan install .. -b missing"
+            sh "conan install .. -b missing -s compiler.libcxx=libstdc++11"
           }
         }
       }

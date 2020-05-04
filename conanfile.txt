@@ -1,9 +1,0 @@
-[requires]
-opencv/4.1.1@conan/stable
-gtest/1.10.0
-
-[options]
-opencv:gtk=3 # disable for windows
-
-[generators]
-cmake
