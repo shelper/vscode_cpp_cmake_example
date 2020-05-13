@@ -14,3 +14,8 @@ class VscodeCppCmakeConan(ConanFile):
             # conanfile.py can only modify local package options but not global settings
             # thus you cannot modify settings.compiler.libcxx and have to raise an exception
             raise Exception("This package is only compatible with libstdc++11")
+
+    def build(self):
+        cmake = CMake(self)
+        cmake.configure()
+        cmake.build()
