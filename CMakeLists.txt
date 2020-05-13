@@ -1,12 +1,21 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Example VERSION 0.1.0)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup() # this replaces find_package()
+if(EXISTS "${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
+    message("Using toolchain file from CONAN")
+    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+    conan_basic_setup() # conan sets up everything for you
+else()
+    message("Using toolchain file from VCPKG to mock CONAN")
+    include($ENV{vcpkgRoot}/scripts/buildsystems/vcpkg.cmake) # vcpkg needs to add libs one by one
+    find_package(OpenCV CONFIG REQUIRED) 
+    find_package(GTest CONFIG REQUIRED)
+    set(CONAN_LIBS GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main ${OpenCV_LIBRARIES} )
+endif()
 
 # add and setup targets in the folder
 add_library(ExampleFunc ExampleFunc.cpp)
-add_executable(main main.cpp) 
+add_executable(main main.cpp)
 target_link_libraries(main PRIVATE ${CONAN_LIBS})
 
 # add and setup targets in subfolder
