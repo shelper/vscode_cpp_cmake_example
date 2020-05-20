@@ -4,6 +4,7 @@ include(CTest)
 enable_testing()
 
 add_executable(ExampleFunc_test ExampleFunc_test.cpp)
+# target_link_libraries(ExampleFunc_test PRIVATE CONAN_PKG::gtest ExampleFunc) # works with conan_basic_setup(TARGETS)
 target_link_libraries(ExampleFunc_test PRIVATE ${CONAN_LIBS} ExampleFunc)
 
 add_test(
