@@ -3,7 +3,7 @@ from conans import ConanFile, CMake
 
 class VscodeCppCmakeConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    requires = "opencv/4.1.1", "gtest/1.10.0"
+    requires = "opencv/4.1.1@conan/stable", "gtest/1.10.0@conan/stable"
     generators = "cmake"
 
     def configure(self):
