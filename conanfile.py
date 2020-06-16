@@ -7,6 +7,7 @@ class VscodeCppCmakeConan(ConanFile):
     generators = "cmake"
 
     def configure(self):
+        # We can control the options of our dependencies based on current options
         if self.settings.os == "Linux":
             self.options["opencv"].gtk = 3
 
