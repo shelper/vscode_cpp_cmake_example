@@ -7,6 +7,8 @@ class VscodeCppCmakeConan(ConanFile):
     generators = "cmake"
 
     def configure(self):
+        if self.settings.os == "Linux":
+            self.options["opencv"].gtk = 3
 
         if (
             self.settings.compiler in ["gcc", "clang"]
@@ -14,4 +16,6 @@ class VscodeCppCmakeConan(ConanFile):
         ):
             # conanfile.py can only modify local package options but not global settings
             # thus you cannot modify settings.compiler.libcxx and have to raise an exception
-            raise Exception("This package is only compatible with libstdc++11")
+            raise Exception(
+                "This package is only compatible with libstdc++11, try to run `conan profile update settings.compiler.libcxx=libstdc++11 default` to fix it"
+            )
